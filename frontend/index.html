@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List App</title>
+
+    <!-- CSS -->
+     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="auth-container">
+
+        <!--Login-->
+        <div class="auth-card active" id="login">
+
+            <h1>Welcome Back!</h1>
+            <p>Silakan login ke akun kamu</p>
+
+            <form id="loginForm">
+
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input
+                        type="email"
+                        id="loginEmail"
+                        placeholder="Masukkan email"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input
+                        type="password"
+                        id="loginPassword"
+                        placeholder="Masukkan password"
+                        required
+
+                    >
+                </div>
+
+                <button type="submit">Login</button>
+
+            </form>
+
+            <p class="auth-link">
+                Belum punya akun?
+                <a href="#" id="showRegister">Register</a>
+            </p>
+        </div>
+
+        <!-- Register -->
+        <div class="auth-card" id="register">
+
+            <h1>Create Account</h1>
+            <p>Silakan buat akun baru</p>
+
+            <form id="registerForm">
+
+                <div class="form-group">
+                    <label for="registerName">Nama</label>
+                    <input
+                        type="text"
+                        id="registerName"
+                        placeholder="Masukkan nama"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="registerEmail">Email</label>
+                    <input
+                        type="email"
+                        id="registerEmail"
+                        placeholder="Masukkan email"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="registerPassword">Password</label>
+                    <input
+                        type="password"
+                        id="registerPassword"
+                        placeholder="Masukkan password"
+                        required
+                    >
+                </div>
+
+                <button type="submit">Register</button>
+
+            </form>
+
+            <p class="auth-link">
+                Sudah punya akun?
+                <a href="#" id="showLogin">Login</a>
+            </p>
+        </div>
+        <!--container-->
+    </div>
+
+     <!-- Dashboard Todo List -->
+        <div class="dashboard" id="dashboard">
+
+            <!--header-->
+            <header class="dashboard-header">
+                <h1>Todo List App</h1>
+
+                <div class="user-info">
+                    <span id="userName">Halo</span>
+                    <button type="button" id="logoutButton">Logout</button>
+                </div>
+            </header>
+
+            <!--konten dashboard-->
+            <main class="dashboard-content">
+
+                <div class="dashboard-title">
+                    <h2>My Tasks</h2>
+                    <p>Kelola semua aktivitas kamu di sini</p>
+                </div>
+
+                <!--form tambah todo-->
+                <div class="todo-form">
+                    <p>Judul</p>
+                    <input
+                        type="text"
+                        id="todoInput"
+                        placeholder="Masukkan judul Todo..."
+                    >
+                    <p>Deskripsi</p>
+                    <input
+                        type="text"
+                        id="todoDescription"
+                        placeholder="Masukkan deskripsi Todo... "
+                    >
+                    <button type="button" id="addTodoButton">Tambah Todo</button>
+                    </div>
+
+                    <!--daftar todo-->
+                    <div class="todo-list">
+
+                        <!--menjadi tempat menampilkan data dari API.-->
+                    </div>
+
+            </main>
+
+        </div>
+  
+    <!-- JavaScript -->
+     <script src="script.js"></script>
+</body>
+</html>
