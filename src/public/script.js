@@ -94,6 +94,59 @@ loginForm.addEventListener('submit', async function(event){
 
 });
 
+//mengambil form register
+const registerForm = document.getElementById('registerForm');
+const registerName = document.getElementById('registerName');
+const registerEmail = document.getElementById('registerEmail');
+const registerPassword = document.getElementById('registerPassword');
+
+//proses form register
+registerForm.addEventListener('submit', async function(event) {
+    event.preventDefault();
+
+    //mengambil nilai input register
+    const name = registerName.value.trim();
+    const email = registerEmail.value.trim();
+    const password = registerPassword.value.trim();
+
+    try{
+        //mengirim data register ke API
+        const response = await fetch('http://localhost:4001/auth/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                name: name,
+                email: email,
+                password: password
+            }) 
+        });
+
+        //mengambil response dari API
+        const result = await response.json();
+
+        //memeriksa hasil register
+        if(!response.ok){
+            alert(result.message);
+            return;
+        }
+
+        alert(result.message);
+
+        //megosongkan form register
+        registerForm.reset();
+
+        //kembali ke halaman login
+        register.classList.remove('active');
+        login.classList.add('active');
+
+    } catch (error){
+        console.error('Error Register:', error);
+        alert('Tidak dapat terhubung ke server');
+    }
+});
+
 //proses mengambil profile pengguna
 async function getProfile(){
     

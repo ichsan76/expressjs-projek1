@@ -1,6 +1,5 @@
 import * as AuthModel from "../models/auth.js";
 import bcrypt from "bcryptjs";
-import { parse } from "dotenv";
 import jwt from "jsonwebtoken";
 
 const registerUser = async (req, res) => {
